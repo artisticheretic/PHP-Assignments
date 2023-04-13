@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: paleturquoise;
+}
+
+.container{
+    margin: 2rem auto;
+    text-align: center;
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+h3{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0;
+    cursor:cell;
+}
+
+h4{
+    margin: 0;
+    color: red;
+    font-weight: 300;
+}
+
+#form-1{
+    margin: 0;
+    margin-top: 3rem;
+}
+
+.section{
+    margin: 1rem 0;
+}
+
+.section-1{
+    margin: 3rem 0;
+}
+
+label{
+    font-size: 1.3rem;
+    font-weight: 450;
+    padding: 0 1rem;
+}
+
+.error{
+    color: red;
+}
+
+input{
+    border: none;
+    background-color: rgba(0, 0, 0, 0.22);
+    font-size: 1.3rem;
+    padding: 0.3rem 0.3rem;
+    text-align: center;
+}
+
+input:focus{
+    background-color: white;
+}
+
+#fullname{
+    background: white;
+    color: red;
+}
+
+#submit{
+    margin: 2rem 0;
+    padding: 1.5rem 3rem;
+    background: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+    border-radius: 10px;
+}
+
+#submit:hover{
+    cursor: pointer;
+    background: red;
+    color: white;
+}
