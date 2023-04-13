@@ -20,6 +20,7 @@
 
         $emailVal = new EmailValidation($_POST);
         $emailErr = $emailVal->emailValidate();
+        $emailapi = $emailVal->emailGetApi();
 
     }
 
@@ -76,7 +77,8 @@
                 <input placeholder="Enter Email ID" type="text" name="email" id="email" value="<?php echo htmlspecialchars($_POST['email']) ?? '' ?>">
             </div>
             <div class="error">
-                <?php echo $emailErr['email'] ?? '' ?>
+                <?php echo $emailErr['email'] ?? '' ?><br>
+                <?php echo $emailapi;?>
             </div>
 
             <input type="submit" name="submit" id="submit" value="Submit">

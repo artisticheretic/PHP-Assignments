@@ -45,11 +45,11 @@
         public function emailGetApi() {
 
             $curl = curl_init();
+            $emailId = $this->email;
 
             curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://api.apilayer.com/email_verification/check?email=email",
+                CURLOPT_URL => "https://api.apilayer.com/email_verification/check?email=$emailId",
                 CURLOPT_HTTPHEADER => array(
-                        "Content-Type: text/plain",
                         "apikey: dKK0sX4WHp19gRZRUiQHnYjkUc1c8h31"
                 ),
                 CURLOPT_RETURNTRANSFER => true,
@@ -62,9 +62,16 @@
                 ));
 
             $response = curl_exec($curl);
+            $validationResult = json_decode($response);
+
+            if (($validationResult->format_valid) && ($validationResult->smtp_check)) {
+                return $emailId;
+            } else{
+                return "WRONG EMAIL FORMAT";
+            }
 
             curl_close($curl);
-            echo $response;
+            
             
         }
 
