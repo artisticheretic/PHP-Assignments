@@ -2,6 +2,7 @@
 
     require('NameValidation.php');
     require('NumberValidation.php');
+    require('EmailValidation.php');
 
     if (isset($_POST['submit'])) {
     
@@ -14,6 +15,11 @@
 
         $phoneVal = new NumberValidation($_POST);
         $phoneErr = $phoneVal->phoneValidate();
+
+        // Email Validation
+
+        $emailVal = new EmailValidation($_POST);
+        $emailErr = $emailVal->emailValidate();
 
     }
 
@@ -29,24 +35,24 @@
     <div class="container">
         <h2>Enter The Below Details - Fill The Form</h2>
         <h4>* Required Field</h4>
-        <!-- <form action="#" enctype="multipart/form-data" method="POST" id="form-1" onsubmit="return !!(validateTheForm() & fnameTheForm() & lnameTheForm() & validatePhone());"> -->
-        <form action="val-form-new.php" enctype="multipart/form-data" method="POST" id="form-1" onsubmit="return !!(validateTheForm() & fnameTheForm() & lnameTheForm() & validatePhone());">
+        <form action="#" enctype="multipart/form-data" method="POST" id="form-1" onsubmit="return !!(validateTheForm() & fnameTheForm() & lnameTheForm() & validatePhone());">
+        <!-- <form action="val-form-new.php" enctype="multipart/form-data" method="POST" id="form-1" onsubmit="return !!(validateTheForm() & fnameTheForm() & lnameTheForm() & validatePhone());"> -->
 
-            <div class="section">
+            <!-- <div class="section">
                 <label>First Name:</label>
                 <span class="error">*</span>
-                <input placeholder="Enter First Name" type="text" name="fname" id="fname" class="names" value="<?php echo htmlspecialchars($_POST['fname']) ?? '' ?>">
+                <input placeholder="Enter First Name" type="text" name="fname" id="fname" class="names" value="<?php //echo htmlspecialchars($_POST['fname']) ?? '' ?>">
                 <div class="error">
-                    <?php echo $errors['fname'] ?? '' ?>
+                    <?php //echo $errors['fname'] ?? '' ?>
                     </div>
             </div>
 
             <div class="section">
                 <label>Last Name:</label>
                 <span class="error">*</span>
-                <input placeholder="Enter Last Name" type="text" name="lname" id="lname" class="names" value="<?php echo htmlspecialchars($_POST['lname']) ?? '' ?>">
+                <input placeholder="Enter Last Name" type="text" name="lname" id="lname" class="names" value="<?php //echo htmlspecialchars($_POST['lname']) ?? '' ?>">
                 <div class="error">
-                    <?php echo $errors['lname'] ?? '' ?>
+                    <?php //echo $errors['lname'] ?? '' ?>
                 </div>
             </div>
 
@@ -58,10 +64,19 @@
             <div class="section">
                 <label>Phone Number:</label>
                 <span class="error">*</span>
-                <input placeholder="Enter Phone Number" type="text" name="phone" id="phone" value="<?php echo htmlspecialchars($_POST['phone']) ?? '' ?>">
+                <input placeholder="Enter Phone Number" type="text" name="phone" id="phone" value="<?php //echo htmlspecialchars($_POST['phone']) ?? '' ?>">
                 <div class="error">
-                    <?php echo $phoneErr['phone'] ?? '' ?>
+                    <?php //echo $phoneErr['phone'] ?? '' ?>
                 </div>
+            </div> -->
+
+            <div class="section">
+                <label>Email:</label>
+                <span class="error">*</span>
+                <input placeholder="Enter Email ID" type="text" name="email" id="email" value="<?php echo htmlspecialchars($_POST['email']) ?? '' ?>">
+            </div>
+            <div class="error">
+                <?php echo $emailErr['email'] ?? '' ?>
             </div>
 
             <input type="submit" name="submit" id="submit" value="Submit">
@@ -71,6 +86,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="val-form.js" type="text/javascript"></script>
+    <!-- <script src="val-form.js" type="text/javascript"></script> -->
 </body>
 </html>
