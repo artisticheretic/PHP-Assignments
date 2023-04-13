@@ -19,7 +19,7 @@ function validateTheForm() {
     var fname = document.getElementById('fname').value;
     var lname = document.getElementById('lname').value;
 
-    if (fname =="" || lname =="") {
+    if (fname =="" || lname =="" ) {
         alert("Fields Can't Be Empty");
         return false;
     }
@@ -57,6 +57,26 @@ function lnameTheForm() {
      alert("Last Name Can Only Contain Alphabets And NO Empty Space");
      return false;
      }
+}
+
+// Checking if Phone Number field is empty , and if it is not whether the Indian Number criterias are met
+
+function validatePhone() {
+    var phone = document.getElementById('phone').value;
+    var phoneRegEx = /^(91)+[0-9]{10}$/;
+    
+    if (phone == "") {
+        alert("Fields Can't Be Empty")
+        return false;
+    }
+    else {
+        if (phone.match(phoneRegEx)) {
+            return true;
+        }
+        else {
+            alert("Phone Number Can Only 10 Digits Starting With '+91' ")
+        }
+    }
 }
 
 

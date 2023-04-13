@@ -12,7 +12,8 @@
 </head>
 <body>
     <div class="container">
-        <h3>Hello <?php echo htmlspecialchars($_POST['fname']) ?> <?php echo htmlspecialchars($_POST['lname']) ?> </h3>
+        <h3>Hello, I'm <?php echo htmlspecialchars($_POST['fname']) ?> <?php echo htmlspecialchars($_POST['lname']) ?> </h3>
+        <h5> <?php echo htmlspecialchars($_POST['phone']) ?> is my phone number</h5>
     </div>    
 </body>
 </html>
